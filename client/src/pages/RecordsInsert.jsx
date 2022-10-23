@@ -145,8 +145,8 @@ class RecordsInsert extends Component {
                     onChange={this.handleChangeInputHealthRecord}
                 />
 
-                <Button onClick={this.handleIncludeRecord}>Add Record</Button>
-                <CancelButton href={'/records/list'}>Cancel</CancelButton>
+                <Button onClick={this.handleIncludeRecord}>上传打卡</Button>
+                <CancelButton href={'/records/list'}>取消</CancelButton>
             </Wrapper>
         )
     }
