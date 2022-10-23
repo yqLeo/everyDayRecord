@@ -5,9 +5,11 @@ import api from '../api'
 import styled from 'styled-components'
 
 import 'react-table/react-table.css'
+import MobileTable from '@yrobot/react-mobile-table';
+import '@yrobot/react-mobile-table/lib/index.css';
 
 const Wrapper = styled.div`
-    padding: 0 40px 40px 40px;
+    padding: 0 10px 3px 3px;
 `
 
 const Update = styled.div`
@@ -103,11 +105,13 @@ class RecordsList extends Component {
                 Header: '今日心情/状态',
                 accessor: 'condition',
                 filterable: true,
+                width: 130
             },
             {
                 Header: '医疗记录/药物记录',
                 accessor: 'healthRecord',
                 filterable: true,
+                width: 170
             },
             
             {
@@ -134,6 +138,8 @@ class RecordsList extends Component {
             //     },
             // },
         ]
+          
+          
 
         let showTable = true
         if (!records.length) {
