@@ -5,8 +5,6 @@ import api from '../api'
 import styled from 'styled-components'
 
 import 'react-table/react-table.css'
-import MobileTable from '@yrobot/react-mobile-table';
-import '@yrobot/react-mobile-table/lib/index.css';
 
 const Wrapper = styled.div`
     padding: 0 10px 3px 3px;
