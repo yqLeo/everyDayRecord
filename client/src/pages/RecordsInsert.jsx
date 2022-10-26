@@ -114,7 +114,7 @@ class RecordsInsert extends Component {
         const payload = { name, bloodPressure, weight, sleepTime, wakeTime, wakeUp, medicine, temp, bath, date}
         console.log(payload)
         await api.insertRecord(payload).then(res => {
-            window.alert(`Record inserted successfully`)
+            window.alert(`成功上传！`)
             this.setState({
                 name: '',
                 bloodPressure: '',
