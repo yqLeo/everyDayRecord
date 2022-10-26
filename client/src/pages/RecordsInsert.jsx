@@ -152,7 +152,6 @@ class RecordsInsert extends Component {
                 <Label>血压: </Label>
                 <InputText
                     type="string"
-                    pattern="\d*"
                     value={bloodPressure}
                     onChange={this.handleChangeInputBloodPressure}
                 />
@@ -161,7 +160,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={weight}
-                    pattern="[0-9]*"
+                    pattern="[0-9]+([\.,][0-9]+)?"
                     inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputWeight}
                 />
@@ -170,7 +169,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={temp}
-                    pattern="[0-9]*"
+                    pattern="[0-9]+([\.,][0-9]+)?"
                     inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputTemp}
                 />
@@ -179,7 +178,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={sleepTime}
-                    pattern="[0-9]*"
+                    pattern="[0-9]+([\.,][0-9]+)?"
                     inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputSleepTime}
                 />
@@ -188,7 +187,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={wakeTime}
-                    pattern="[0-9]*"
+                    pattern="[0-9]+([\.,][0-9]+)?"
                     inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputWakeTime}
                 />
@@ -206,7 +205,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={bath}
-                    pattern="[0-9]*"
+                    pattern="[0-9]+([\.,][0-9]+)?"
                     inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputBath}
                 />  
