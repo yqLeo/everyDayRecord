@@ -151,9 +151,9 @@ class RecordsInsert extends Component {
 
                 <Label>血压: </Label>
                 <InputText
-                    type="number"
+                    type="string"
+                    pattern="\d*"
                     value={bloodPressure}
-                    pattern="[0-9]*"
                     onChange={this.handleChangeInputBloodPressure}
                     inputProps={{ inputMode: 'numeric' }}
                 />
