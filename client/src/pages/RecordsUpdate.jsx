@@ -80,7 +80,7 @@ class RecordsUpdate extends Component {
         const payload = { name, rating, date }
 
         await api.updateRecordById(id, payload).then(res => {
-            window.alert(`Record updated successfully`)
+            window.alert(`成功上传！`)
             this.setState({
                 name: '',
                 rating: '',
