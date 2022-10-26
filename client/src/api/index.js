@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const api = axios.create({
-    //baseURL: 'http://47.99.62.122:3000/api',
-     baseURL: 'http://localhost:3000/api',
+    baseURL: 'http://47.99.62.122:3000/api',
+     //baseURL: 'http://localhost:3000/api',
 })
 
 export const insertRecord = payload => api.post(`/record`, payload)
