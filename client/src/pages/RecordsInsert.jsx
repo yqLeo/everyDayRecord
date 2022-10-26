@@ -162,6 +162,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={weight}
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputWeight}
                 />
@@ -170,6 +171,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={temp}
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputTemp}
                 />
@@ -178,6 +180,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={sleepTime}
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputSleepTime}
                 />
@@ -186,7 +189,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={wakeTime}
-                    pattern="[0-9]+([,\.][0-9]+)?"
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputWakeTime}
                 />
@@ -195,7 +198,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={wakeUp}
-                    pattern="[0-9]+([,\.][0-9]+)?"
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputWakeUp}
                 />
@@ -204,7 +207,7 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={bath}
-                    pattern="[0-9]+([,\.][0-9]+)?"
+                    pattern="[0-9]*"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputBath}
                 />  
