@@ -78,38 +78,62 @@ class RecordsList extends Component {
             {
                 Header: '日期',
                 accessor: 'date',
-                filterable: true,
+                //filterable: true,
                 width: 100
             },
             {
                 Header: '名称',
                 accessor: 'name',
-                filterable: true,
+               // filterable: true,
                 width: 50
             },
             {
                 Header: '血压',
                 accessor: 'bloodPressure',
-                filterable: true,
+                //filterable: true,
+                width: 75
+            },
+            {
+                Header: '昨日服药',
+                accessor: 'medicine',
+               // filterable: true,
                 width: 75
             },
             {
                 Header: '体重',
                 accessor: 'weight',
-                filterable: true,
+              //  filterable: true,
                 width: 75
             },
             {
-                Header: '今日心情/状态',
-                accessor: 'condition',
-                filterable: true,
-                width: 130
+                Header: '体温',
+                accessor: 'temp',
+             //   filterable: true,
+                width: 75
             },
             {
-                Header: '医疗记录/药物记录',
-                accessor: 'healthRecord',
-                filterable: true,
-                width: 170
+                Header: '入眠时间',
+                accessor: 'sleepTime',
+              //  filterable: true,
+                width: 75
+            },
+            {
+                Header: '起床时间',
+                accessor: 'wakeTime',
+              //  filterable: true,
+                width: 75
+            },
+            {
+                Header: '起床次数',
+                accessor: 'wakeUp',
+               // filterable: true,
+                width: 75
+            },
+            {
+                Header: '大便次数',
+                accessor: 'bath',
+              //  filterable: true,
+                width: 75
             },
             
             {

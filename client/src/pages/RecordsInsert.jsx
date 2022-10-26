@@ -46,8 +46,12 @@ class RecordsInsert extends Component {
             name: '',
             bloodPressure: '',
             weight: '',
-            condition: '',
-            healthRecord: ''
+            sleepTime: '',
+            wakeUp: '',
+            wakeTime: '',
+            medicine: '',
+            temp: '',
+            bath: '',
         }
     }
     nameOptions = [
@@ -55,15 +59,17 @@ class RecordsInsert extends Component {
         { value: '外婆', label: '外婆' },
         { value: '羽龙', label: '羽龙' }
       ]
+    chooseOptions = [
+        { value: '是', label: '是' },
+        { value: '否', label: '否' },
+      ]
 
     handleChangeInputName(value){
         this.setState({ name: value.value })
     }
 
     handleChangeInputBloodPressure = async event => {
-        const bloodPressure = event.target.validity.valid
-            ? event.target.value
-            : this.state.rating
+        const bloodPressure = event.target.value
 
         this.setState({ bloodPressure })
     }
@@ -73,19 +79,39 @@ class RecordsInsert extends Component {
         this.setState({ weight })
     }
 
-    handleChangeInputCondition = async event => {
-        const condition = event.target.value
-        this.setState({ condition })
+    handleChangeInputSleepTime = async event => {
+        const sleepTime = event.target.value
+        this.setState({ sleepTime })
     }
 
-    handleChangeInputHealthRecord = async event => {
-        const healthRecord = event.target.value
-        this.setState({ healthRecord })
+    handleChangeInputWakeTime = async event => {
+        const wakeTime = event.target.value
+        this.setState({ wakeTime })
     }
+
+    handleChangeInputWakeUp = async event => {
+        const wakeUp = event.target.value
+        this.setState({ wakeUp })
+    }
+
+    handleChangeInputMedicine(value){
+        this.setState({ medicine: value.value })
+    }
+
+    handleChangeInputTemp = async event => {
+        const temp = event.target.value
+        this.setState({ temp })
+    }
+
+    handleChangeInputBath = async event => {
+        const bath = event.target.value
+        this.setState({ bath })
+    }
+
 
     handleIncludeRecord = async () => {
-        const { name, bloodPressure, weight, condition, healthRecord } = this.state
-        const payload = { name, bloodPressure, weight, condition, healthRecord, date }
+        const { name, bloodPressure, weight, sleepTime, wakeTime, wakeUp, medicine, temp, bath } = this.state
+        const payload = { name, bloodPressure, weight, sleepTime, wakeTime, wakeUp, medicine, temp, bath, date}
         console.log(payload)
         await api.insertRecord(payload).then(res => {
             window.alert(`Record inserted successfully`)
@@ -93,14 +119,18 @@ class RecordsInsert extends Component {
                 name: '',
                 bloodPressure: '',
                 weight: '',
-                condition: '',
-                healthRecord: ''
+                sleepTime: '',
+                wakeUp: '',
+                wakeTime: '',
+                medicine: '',
+                temp: '',
+                bath: '',
             })
         })
     }
 
     render() {
-        const { name, bloodPressure, weight, condition, healthRecord } = this.state
+        const { name, bloodPressure, weight, sleepTime, wakeTime, wakeUp, medicine, temp, bath } = this.state
         return (
             <Wrapper>
                 <Title>创建打卡</Title>
@@ -110,40 +140,77 @@ class RecordsInsert extends Component {
                 options={this.nameOptions}
                 value={this.state.value}
                 onChange={value => this.handleChangeInputName(value)}
-            />
+                />
+
+                <Label>昨日是否按时服药: </Label>
+                <Select
+                options={this.chooseOptions}
+                value={this.state.value}
+                onChange={value => this.handleChangeInputMedicine(value)}
+                />
 
                 <Label>血压: </Label>
                 <InputText
                     type="number"
-                    step="1"
-                    lang="en-US"
-                    min="0"
-                    max="200"
                     pattern="[0-9]+([,\.][0-9]+)?"
                     value={bloodPressure}
                     onChange={this.handleChangeInputBloodPressure}
+                    inputProps={{ inputMode: 'numeric' }}
                 />
 
                 <Label>体重(公斤): </Label>
                 <InputText
-                    type="text"
+                    type="number"
                     value={weight}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputWeight}
                 />
 
-                <Label>今日心情如何，健康状况如何？</Label>
+                <Label>体温(摄氏度): </Label>
                 <InputText
-                    type="text"
-                    value={condition}
-                    onChange={this.handleChangeInputCondition}
+                    type="number"
+                    value={temp}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
+                    onChange={this.handleChangeInputTemp}
                 />
 
-                <Label>有无医疗记录，药物服用？ </Label>
+                <Label>几点入眠： </Label>
                 <InputText
-                    type="text"
-                    value={healthRecord}
-                    onChange={this.handleChangeInputHealthRecord}
+                    type="number"
+                    value={sleepTime}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
+                    onChange={this.handleChangeInputSleepTime}
                 />
+
+                <Label>几点起床: </Label>
+                <InputText
+                    type="number"
+                    value={wakeTime}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
+                    onChange={this.handleChangeInputWakeTime}
+                />
+
+                <Label>起夜次数: </Label>
+                <InputText
+                    type="number"
+                    value={wakeUp}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
+                    onChange={this.handleChangeInputWakeUp}
+                />
+
+                <Label>大便次数: </Label>
+                <InputText
+                    type="number"
+                    value={bath}
+                    pattern="[0-9]+([,\.][0-9]+)?"
+                    inputProps={{ inputMode: 'numeric' }}
+                    onChange={this.handleChangeInputBath}
+                />  
 
                 <Button onClick={this.handleIncludeRecord}>上传打卡</Button>
                 <CancelButton href={'/records/list'}>取消</CancelButton>

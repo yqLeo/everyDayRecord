@@ -54,8 +54,12 @@ updateRecord = async (req, res) => {
         record.date = body.date
         record.bloodPressure = body.bloodPressure
         record.weight = body.weight
-        record.condition = body.condition
-        record.healthRecord = body.healthRecord
+        record.sleepTime = body.sleepTime
+        record.wakeUp = body.wakeUp
+        record.wakeTime = body.wakeTime
+        record.medicine = body.medicine
+        record.temp = body.temp
+        record.bath = body.bath
             .save()
             .then(() => {
                 return res.status(200).json({

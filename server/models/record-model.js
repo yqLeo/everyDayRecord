@@ -7,8 +7,12 @@ const Record = new Schema(
         date: { type: String, required: true },
         bloodPressure: { type: Number, required: false },
         weight: { type: Number, required: false },
-        condition: { type: String, required: false },
-        healthRecord: { type: String, required: false }
+        sleepTime: { type: Number, required: false },
+        wakeUp: {type: Number, required: false},
+        wakeTime: { type: Number, required: false },
+        medicine: { type: String, required: false },
+        temp: {type: Number, required: false},
+        bath: {type: Number, required: false},
     },
     { timestamps: true },
 )
