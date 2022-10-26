@@ -152,8 +152,8 @@ class RecordsInsert extends Component {
                 <Label>血压: </Label>
                 <InputText
                     type="number"
-                    pattern="[0-9]+([,\.][0-9]+)?"
                     value={bloodPressure}
+                    pattern="[0-9]*"
                     onChange={this.handleChangeInputBloodPressure}
                     inputProps={{ inputMode: 'numeric' }}
                 />
@@ -162,7 +162,6 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={weight}
-                    pattern="[0-9]+([,\.][0-9]+)?"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputWeight}
                 />
@@ -171,7 +170,6 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={temp}
-                    pattern="[0-9]+([,\.][0-9]+)?"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputTemp}
                 />
@@ -180,7 +178,6 @@ class RecordsInsert extends Component {
                 <InputText
                     type="number"
                     value={sleepTime}
-                    pattern="[0-9]+([,\.][0-9]+)?"
                     inputProps={{ inputMode: 'numeric' }}
                     onChange={this.handleChangeInputSleepTime}
                 />
