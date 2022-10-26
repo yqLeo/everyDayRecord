@@ -155,7 +155,6 @@ class RecordsInsert extends Component {
                     pattern="\d*"
                     value={bloodPressure}
                     onChange={this.handleChangeInputBloodPressure}
-                    inputProps={{ inputMode: 'numeric' }}
                 />
 
                 <Label>体重(公斤): </Label>
@@ -163,7 +162,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={weight}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputWeight}
                 />
 
@@ -172,7 +171,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={temp}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputTemp}
                 />
 
@@ -181,7 +180,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={sleepTime}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputSleepTime}
                 />
 
@@ -190,7 +189,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={wakeTime}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputWakeTime}
                 />
 
@@ -199,7 +198,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={wakeUp}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputWakeUp}
                 />
 
@@ -208,7 +207,7 @@ class RecordsInsert extends Component {
                     type="number"
                     value={bath}
                     pattern="[0-9]*"
-                    inputProps={{ inputMode: 'numeric' }}
+                    inputProps={{ inputMode: 'decimal' }}
                     onChange={this.handleChangeInputBath}
                 />  
 

@@ -5,7 +5,7 @@ const Record = new Schema(
     {
         name: { type: String, required: true },
         date: { type: String, required: true },
-        bloodPressure: { type: Number, required: false },
+        bloodPressure: { type: String, required: false },
         weight: { type: Number, required: false },
         sleepTime: { type: Number, required: false },
         wakeUp: {type: Number, required: false},
